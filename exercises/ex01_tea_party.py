@@ -6,14 +6,9 @@ __author__: str = "730461334"
 def main_planner(guests: int) -> None:
     """Main planner to calculate cost based on numbers of tea bags and treats, which are based on the number of people attending"""
     print("A Cozy Tea Party for " + str(guests) + " People!")
-    print("Tea Bags: " + str(tea_bags(people=guests)))
-    print("Treats: " + str(treats(people=guests)))
-    print(
-        "Cost: $"
-        + str(
-            cost(tea_count=tea_bags(people=guests), treat_count=treats(people=guests))
-        )
-    )
+    print("Tea Bags: " + str(tea_bags(guests)))
+    print("Treats: " + str(treats(guests)))
+    print("Cost: $" + str(cost(tea_bags(guests), treats(guests))))
 
 
 # notice that you need to identify the parameters and argument each time you call a function!
