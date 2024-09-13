@@ -11,7 +11,7 @@ def main_planner(guests: int) -> None:
     print("Cost: $" + str(cost(tea_bags(guests), treats(guests))))
 
 
-# notice that you need to identify the parameters and argument each time you call a function!
+# the main planner strings together all of the functions we've written, using a different variable, guests
 
 
 def tea_bags(people: int) -> int:
@@ -33,5 +33,5 @@ def cost(tea_count: int, treat_count: int) -> float:
     return float((0.5 * tea_count) + (0.75 * treat_count))
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     main_planner(guests=int(input("How many guests are attending your tea party? ")))
