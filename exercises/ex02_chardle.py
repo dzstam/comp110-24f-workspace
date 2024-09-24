@@ -4,18 +4,18 @@ __author__: str = "730461334"
 
 
 def input_word() -> str:
+    """checks word length"""
     word: str = input("Enter a 5-character word: ")
     word_length: int = len(word)
-    if (
-        word_length != 5
-    ):  # the boolean operator 1= could be switched to = if the if and else statements were switched
-        print("Error: Word must contain 5 charcters.")
+    if word_length != 5:
+        print("Error: Word must contain 5 characters.")
         exit()
     else:
         return word
 
 
 def input_letter() -> str:
+    """ "checks letter length"""
     letter: str = input("Enter a single character: ")
     letter_length: int = len(letter)
     if letter_length != 1:
@@ -26,27 +26,24 @@ def input_letter() -> str:
 
 
 def contains_char(word: str, letter: str) -> None:
+    """evaluates letter presence in word, and how many times"""
     print("Searching for " + letter + " in " + word)
     index: int = 0
     matching_characters: int = 0
-    while index < len(word):
+    while index < len(word):  # make sure the index < len(word), not <=
         if word[index] == letter:
-            print(str(letter) + " found at index " + str(index))
+            print((letter) + " found at index " + str(index))
             matching_characters = matching_characters + 1
         index = index + 1
-    if matching_characters != 0:
+    if matching_characters != 0:  # this line must separate from the while loop
         print(
-            str(matching_characters)
-            + " instances of "
-            + str(letter)
-            + " found in "
-            + (word)
+            str(matching_characters) + " instances of " + letter + " found in " + word
         )
     else:
-        print("No instances of " + str(letter) + " found in " + str(word))
+        print("No instances of " + letter + " found in " + word)
 
 
-def main() -> None:
+def main() -> None:  # need a main function to tie all functions together
     contains_char(word=input_word(), letter=input_letter())
 
 
