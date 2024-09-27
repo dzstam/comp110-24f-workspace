@@ -25,6 +25,7 @@ def input_letter() -> str:
         return letter
 
 
+# this function needs to be separate from the others because the other two need to check whether the direction were followed
 def contains_char(word: str, letter: str) -> None:
     """evaluates letter presence in word, and how many times"""
     print("Searching for " + letter + " in " + word)
@@ -35,17 +36,21 @@ def contains_char(word: str, letter: str) -> None:
             print((letter) + " found at index " + str(index))
             matching_characters = matching_characters + 1
         index = index + 1
-    if matching_characters != 0:  # this line must separate from the while loop
+    if matching_characters == 0:  # this line must be separate from the while loop
+        print("No instances of " + letter + " found in " + word)
+    elif matching_characters == 1:
+        print(str(matching_characters) + " instance of " + letter + " found in " + word)
+    else:
         print(
             str(matching_characters) + " instances of " + letter + " found in " + word
         )
-    else:
-        print("No instances of " + letter + " found in " + word)
 
 
 def main() -> None:  # need a main function to tie all functions together
     contains_char(word=input_word(), letter=input_letter())
 
+
+# notice that word, though defined in input_word, must be reassigned an argument because it is not defined in this frame
 
 if __name__ == "__main__":
     main()
