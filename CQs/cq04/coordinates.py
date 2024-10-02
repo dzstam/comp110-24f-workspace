@@ -19,7 +19,5 @@ def get_coords(xs: str, ys: str) -> None:
         output = "("
 
 
-# how get it to not return None
-
-
-print(get_coords("hi", "bye"))
+if __name__ == "__main__":
+    get_coords("hi", "bye")
