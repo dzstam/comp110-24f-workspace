@@ -5,10 +5,9 @@ __author__: str = "730461334"
 
 def input_guess(secret_word_len: int) -> str:
     """prompts the user to enter a guess until it is the correct length"""
-    # secret_word_len: int = len(secret)
     guess: str = input(f"Enter a {secret_word_len} character word: ")
     while len(guess) != secret_word_len:
-        guess = input(f"That wasn't {secret_word_len} characters! Try again: ")
+        guess = input(f"That wasn't {secret_word_len} chars! Try again: ")
     return guess  # returns guess now so that we can assign this function to guess later
 
 
@@ -27,13 +26,6 @@ def contains_char(secret_word: str, char_guess: str) -> bool:
         return True
     else:
         return False
-
-
-# print(input_guess(secret_word_len=6))
-# print(contains_char(secret_word="abc", char_guess="a"))
-
-# type this into the REPL to use the function there
-# from exercises.ex03_wordle import contains_char
 
 
 def emojified(guess: str, secret_word: str) -> str:
@@ -55,10 +47,6 @@ def emojified(guess: str, secret_word: str) -> str:
             emoji_line = emoji_line + WHITE_BOX
         index2 = index2 + 1
     return emoji_line  # return, don't print since you are printing later
-
-
-# print(emojified(guess="dream", secret_word="crara"))
-# emojified(guess="hello", secret_word="world")
 
 
 def main(secret: str) -> None:
