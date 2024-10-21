@@ -9,6 +9,11 @@ def remove_chars(msg: str, char: str) -> str:
     return copy
 
 
+# word: str = "yoyo"  # this is a global variable
+# print(remove_chars(word, "o"))
+
+# (1/2) this is a statement that will ensure that when the functions are called
+# (2/2) in another file, these calls won't show up
 if __name__ == "__main__":
     word: str = "yoyo"  # this is a global variable
     print(remove_chars(word, "o"))
